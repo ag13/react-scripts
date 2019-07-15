@@ -13,13 +13,24 @@ module.exports = {
     '^react-relay$': path.resolve(__dirname, '__mocks__/react-relay.js'),
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  globals: {
+    'ts-jest': {
+      babelConfig: {
+        plugins: ['relay'],
+      },
+    },
+  },
   transform: {
     '\\.js$': path.resolve(__dirname, 'babelTransform.js'),
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
 
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/stories.{js,jsx,ts,tsx}'],
-  coveragePathIgnorePatterns: ['/node_modules/', '<rootDir>/src/.*__generated__/', '<rootDir>/src/assets/'],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '<rootDir>/src/.*__generated__/',
+    '<rootDir>/src/assets/',
+  ],
   testRegex: 'src/.*__spec\\.(jsx?|tsx?)$',
   snapshotSerializers: [require.resolve('enzyme-to-json/serializer')],
   setupFiles: [path.resolve(__dirname, 'testSetup.js')],
