@@ -4,14 +4,7 @@ module.exports = babelJest.createTransformer({
   passPerPreset: true,
   presets: ['@babel/preset-react', '@babel/preset-env'].map(require.resolve),
   plugins: [
-    [
-      'babel-plugin-relay',
-      {
-        compat: false,
-        artifactDirectory: 'src/__generated__',
-        schema: 'schema.graphql',
-      },
-    ],
+    'babel-plugin-relay',
     [
       '@babel/plugin-transform-runtime',
       {
