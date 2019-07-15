@@ -5,7 +5,7 @@ module.exports = babelJest.createTransformer({
   presets: ['@babel/preset-react', '@babel/preset-env'].map(require.resolve),
   plugins: [
     [
-      'relay',
+      'babel-plugin-relay',
       {
         compat: false,
         artifactDirectory: 'src/__generated__',
