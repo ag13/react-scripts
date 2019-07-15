@@ -16,7 +16,7 @@ module.exports = {
   globals: {
     'ts-jest': {
       babelConfig: {
-        plugins: ['relay'],
+        plugins: [require.resolve('babel-plugin-relay')],
       },
     },
   },
