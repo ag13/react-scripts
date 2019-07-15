@@ -9,6 +9,9 @@ if (!process.env.CI && argv.indexOf('--coverage') < 0) {
 
 const path = require('path');
 
-argv.push(`--config=${path.resolve(__dirname, 'utils', 'jestConfig.js')}`);
+argv.push(
+  '--config',
+  path.resolve(__dirname, 'utils', 'jestConfig.js'),
+);
 
 jest.run(argv);
