@@ -2,7 +2,7 @@ const babelJest = require('babel-jest');
 
 module.exports = babelJest.createTransformer({
   passPerPreset: true,
-  presets: ['@babel/preset-react', '@babel/preset-env', '@babel/preset-typescript'].map(require.resolve),
+  presets: ['@babel/preset-react', '@babel/preset-env'].map(require.resolve),
   plugins: [
     'babel-plugin-relay',
     [
