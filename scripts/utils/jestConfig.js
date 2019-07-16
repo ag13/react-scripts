@@ -13,17 +13,9 @@ module.exports = {
     '^react-relay$': path.resolve(__dirname, '__mocks__/react-relay.js'),
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  globals: {
-    'ts-jest': {
-      babelConfig: {
-        presets: ['@babel/preset-react', '@babel/preset-env'],
-        plugins: ['relay'],
-      },
-    },
-  },
   transform: {
     '\\.js$': path.resolve(__dirname, 'babelTransform.js'),
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx)$': path.resolve(__dirname, 'babelTransform.js'),,
   },
 
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/stories.{js,jsx,ts,tsx}'],
