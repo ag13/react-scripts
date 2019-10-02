@@ -24,9 +24,9 @@ function printFileSizes(stats, config) {
     };
   });
   assets.sort((a, b) => b.size - a.size);
-  const longestSizeLabelLength = Math.max.apply(null, assets.map(a => a.sizeLabel.length));
+  const longestSizeLabelLength = Math.max.apply(null, assets.map(a => a.sizeLabel && a.sizeLabel.length));
   assets.forEach((asset) => {
-    let sizeLabel = asset.sizeLabel;
+    let sizeLabel = asset && asset.sizeLabel;
     const sizeLength = sizeLabel.length;
     if (sizeLength < longestSizeLabelLength) {
       const rightPadding = ' '.repeat(longestSizeLabelLength - sizeLength);
