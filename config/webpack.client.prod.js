@@ -66,6 +66,9 @@ const config = merge.smart(
             inline: false,
           },
           reduceIdents: false,
+          //FIXME: this is necessary due to an upstream bug, can turn back on when released upstream:
+          // https://github.com/cssnano/cssnano/issues/732
+          minifyGradients: false,
         },
       }),
     ],
